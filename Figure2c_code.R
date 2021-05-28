@@ -115,7 +115,7 @@ sim_data_cluster <- function(nstudies, ncoef, ntest, sampsize){
     curcoefs <- sapply(coefs, function(x){runif(1, x - .25, x + .25)})
     #curcoefs <- coefs
     if (i == nstudies){
-      data_i <- rmvl(n = numsample, mu = cluster_means[i, ], Sigma = diag(nchoose))
+      data_i <- mvrnorm(n = numsample, mu = cluster_means[i, ], Sigma = diag(nchoose))
     }
     else{
       data_i <- rmvl(n = numsample, mu = cluster_means[1, ], Sigma = diag(nchoose))
